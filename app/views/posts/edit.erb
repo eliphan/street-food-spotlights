@@ -1,0 +1,23 @@
+<h1>Edit your post</h1>
+
+<form action="/posts/<%= @post.slug %>" method="POST">
+
+  <input type="hidden" name="_method" value="PATCH">
+  <p>Title:
+    <input type="text" name="post[title]" value="<%= @post.title %>">
+  </p>
+  <p>Author:
+    <input type="text" name="post[author]" value="<%= @post.author %>">
+  </p>
+  <p>Content:
+    <input type="text" name="post[content]" value="<%= @post.content %>">
+  </p>
+  <p>
+    <input type="submit" name="submit" value="Edit Post">
+  </p>
+  
+</form>
+
+<br></br>
+<p><a href="/logout">Log Out</a></p>
+<p><a href="/">Home</a></p>

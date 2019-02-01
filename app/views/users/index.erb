@@ -1,1 +1,20 @@
 <h1>Hello <%= @user.name %></h1>
+
+  <% if logged_in? %>
+    <p>Email: <%= @user.email %></p>
+  <% end %>
+  <% if @user == current_user %>
+    <p><a href="/users/<%= @user.slug %>/edit">Edit</a></p>
+    <p><a href="/users/<%= @user.slug %>/delete">Delete</a></p>
+  <% end %>
+
+  <br></br>
+  <p><a href="/users/<%= @user.slug %>/posts"> <%= @user.username %>'s Posts<a/></p>
+  <p><a href="/posts">All posts</a></p>
+  <p><a href="/">Home</a></p>
+  <% if !logged_in? %>
+    <p><a href="/login">Log In</a></p>
+  <% else %>
+    <p><a href="/logout">Log Out</a></p>
+  <% end %>
+
