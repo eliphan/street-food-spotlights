@@ -5,11 +5,6 @@ class PostsController < ApplicationController
       erb :'posts/index'
     end
 
-    get '/users/:slug/posts' do
-      @user = User.find_by_slug(params[:slug])
-        erb :'/users/myposts'
-    end
-
     get '/posts/new' do
       if logged_in?
         erb :'posts/new'

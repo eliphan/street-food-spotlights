@@ -6,11 +6,13 @@
     <div class="content">
       <p>Welcome to Street Food Spotlights, where you can share and discuss your favorite street food locations.</p>
       <% if !logged_in? %>
+
         <p><a href="/posts">All Posts</a></p>
         <p><a href="/login">Log In</a></p>
         <p><a href="/signup">Sign Up</a></p>
       <% else %>
         <p>Welcome, <%= current_user.username %>!</p>
+        <p><a href="/users/:slug/posts">Your Posts</a></p>
         <p><a href="/posts/new">Create a new post</a></p>
         <p><a href="/posts">All posts</a></p>
         <p><a href="/logout">Log Out</a></p>

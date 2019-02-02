@@ -1,0 +1,21 @@
+<p><a href="/">Home</a></p>
+
+<h2><%= @user.username %>'s Posts:</h2>
+<ul>
+<% @post.each do |post| %>
+  <div>
+    <li><a href="/posts/<%= post.slug %>"><%= post.title %></a></li>
+  </div>
+<% end %>
+</ul>
+<br></br>
+
+<% if !logged_in? %>
+  <p><a href="/login">Log In</a></p>
+  <p><a href="/">Home</a></p>
+<% else %>
+  <p><a href="/recipes/new">Create a Post</a></p>
+  <p><a href="/posts">All Posts</a></p>
+  <br>
+  <p><a href="/logout">Log Out</a></p>
+<% end %>
