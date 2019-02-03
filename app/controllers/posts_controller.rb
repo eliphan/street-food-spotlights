@@ -57,7 +57,6 @@ class PostsController < ApplicationController
           @post = Post.find_by_slug(params[:slug])
           if @post && @post.user == current_user
             if @post.update(title: params[:post][:title], content: params[:post][:content], author: params[:post][:author])
-              binding.pry
               redirect "/posts/#{@post.slug}"
             else
               redirect "/posts/#{@post.slug}/edit"
